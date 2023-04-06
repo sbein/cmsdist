@@ -24,7 +24,7 @@
 %endif
 
 %if "%{?pip_name:set}" != "set"
-%define pip_name %(echo %n | cut -f2-10 -d-)
+%define pip_name %(echo %n | cut -f2-10 -d- | tr '-' '_')
 %endif
 %if "%{?PipDownloadSourceType:set}" != "set"
 %define PipDownloadSourceType all
